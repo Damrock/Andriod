@@ -1,0 +1,39 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10"
+    android:background="@android:color/darker_gray">
+
+  <ImageView
+      android:id="@+id/fish"
+      android:src="@drawable/fish"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:scaleType="centerCrop"
+      android:padding="10dp"
+      />
+    <TextView
+        android:id="@+id/text1"
+        android:text="Fish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_toRightOf="@id/fish"
+        android:padding="10dp"
+        
+        />
+        <TextView
+        android:text="This is new fish image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:layout_below="@id/text1"
+        android:layout_toRightOf="@id/fish"
+        android:padding="10dp"
+        
+        />
+
+
+</RelativeLayout>
