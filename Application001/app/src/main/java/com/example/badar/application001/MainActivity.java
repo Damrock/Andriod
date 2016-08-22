@@ -9,39 +9,63 @@ import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    int quantity=0;
+    int pointsTeamA=0;
+
+    int pointsTeamB=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
-    public void submitOrder(View view){
 
-        displayPrice(quantity * 5);
+
+    private void displayAPoints(int number){
+        TextView pointsTextView = (TextView) findViewById(R.id.valueA_text_view);
+        pointsTextView.setText(String.valueOf(number));
     }
 
-    private void display(int number){
+    public void incrementA_3Points(View view){
+        pointsTeamA=pointsTeamA+3;
+        displayAPoints(pointsTeamA);
 
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-
-        quantityTextView.setText("" + number);
     }
 
-    private void displayPrice(int number){
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    public void incrementA_2Points(View view){
+        pointsTeamA=pointsTeamA+2;
+        displayAPoints(pointsTeamA);
     }
 
-    public void increment(View view){
-
-        quantity=quantity+1;
-        display(quantity);
+    public void incrementA_1Points(View view){
+        pointsTeamA=pointsTeamA+1;
+        displayAPoints(pointsTeamA);
     }
 
-    public void decrement(View view){
+    //B side
+    private void displayBPoints(int number){
+        TextView pointsTextView = (TextView) findViewById(R.id.valueB_text_view);
+        pointsTextView.setText(String.valueOf(number));
+    }
 
-        quantity=quantity-1;
-        display(quantity);
+    public void incrementB_3Points(View view){
+        pointsTeamB=pointsTeamB+3;
+        displayBPoints(pointsTeamB);
+
+    }
+
+    public void incrementB_2Points(View view){
+        pointsTeamB=pointsTeamB+2;
+        displayBPoints(pointsTeamB);
+    }
+
+    public void incrementB_1Points(View view){
+        pointsTeamB=pointsTeamB+1;
+        displayBPoints(pointsTeamB);
+    }
+
+    public void resetValues(View view){
+
+     displayBPoints(pointsTeamB=0);
+        displayAPoints(pointsTeamA=0);
     }
 }
